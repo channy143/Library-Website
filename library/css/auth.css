@@ -1,0 +1,601 @@
+/* Auth Pages CSS - Reference Design Implementation */
+
+:root {
+    --bg-black: #050505;
+    --bg-panel: #121212;
+    --accent-purple: #a855f7;
+    --accent-yellow: #fde047;
+    --text-white: #ffffff;
+    --text-gray: #9ca3af;
+    --input-bg: #1a1a1a;
+    --input-border: #333333;
+    --btn-white: #ffffff;
+    --btn-dark: #27272a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Layout */
+.auth-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Left Visual Side */
+.auth-visual {
+    width: 50%;
+    height: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #000;
+}
+
+.visual-content {
+    width: 100%;
+    height: 100%;
+    border-radius: 32px;
+    background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=2428&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+/* Grid Cards Layout */
+.visual-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
+    padding: 20px;
+}
+
+.grid-card {
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Wrapper for animation */
+.card-wrapper {
+    position: relative;
+    animation-duration: 8s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-iteration-count: infinite;
+}
+
+.card-wrapper:nth-child(1) {
+    animation-name: slideCard1;
+}
+
+.card-wrapper:nth-child(2) {
+    animation-name: slideCard2;
+}
+
+.card-wrapper:nth-child(3) {
+    animation-name: slideCard3;
+}
+
+.card-wrapper:nth-child(4) {
+    animation-name: slideCard4;
+}
+
+/* Animation keyframes with pauses - 24s total (1s move + 5s pause x4) */
+@keyframes slideCard1 {
+
+    0%,
+    4% {
+        transform: translate(0, 0);
+    }
+
+    4.1%,
+    25% {
+        transform: translate(0, 0);
+    }
+
+    25%,
+    29% {
+        transform: translate(0, calc(100% + 24px));
+    }
+
+    29.1%,
+    50% {
+        transform: translate(0, calc(100% + 24px));
+    }
+
+    50%,
+    54% {
+        transform: translate(calc(100% + 24px), calc(100% + 24px));
+    }
+
+    54.1%,
+    75% {
+        transform: translate(calc(100% + 24px), calc(100% + 24px));
+    }
+
+    75%,
+    79% {
+        transform: translate(calc(100% + 24px), 0);
+    }
+
+    79.1%,
+    100% {
+        transform: translate(calc(100% + 24px), 0);
+    }
+}
+
+@keyframes slideCard2 {
+
+    0%,
+    4% {
+        transform: translate(0, 0);
+    }
+
+    4.1%,
+    25% {
+        transform: translate(0, 0);
+    }
+
+    25%,
+    29% {
+        transform: translate(calc(-100% - 24px), 0);
+    }
+
+    29.1%,
+    50% {
+        transform: translate(calc(-100% - 24px), 0);
+    }
+
+    50%,
+    54% {
+        transform: translate(calc(-100% - 24px), calc(100% + 24px));
+    }
+
+    54.1%,
+    75% {
+        transform: translate(calc(-100% - 24px), calc(100% + 24px));
+    }
+
+    75%,
+    79% {
+        transform: translate(0, calc(100% + 24px));
+    }
+
+    79.1%,
+    100% {
+        transform: translate(0, calc(100% + 24px));
+    }
+}
+
+@keyframes slideCard3 {
+
+    0%,
+    4% {
+        transform: translate(0, 0);
+    }
+
+    4.1%,
+    25% {
+        transform: translate(0, 0);
+    }
+
+    25%,
+    29% {
+        transform: translate(calc(100% + 24px), 0);
+    }
+
+    29.1%,
+    50% {
+        transform: translate(calc(100% + 24px), 0);
+    }
+
+    50%,
+    54% {
+        transform: translate(calc(100% + 24px), calc(-100% - 24px));
+    }
+
+    54.1%,
+    75% {
+        transform: translate(calc(100% + 24px), calc(-100% - 24px));
+    }
+
+    75%,
+    79% {
+        transform: translate(0, calc(-100% - 24px));
+    }
+
+    79.1%,
+    100% {
+        transform: translate(0, calc(-100% - 24px));
+    }
+}
+
+@keyframes slideCard4 {
+
+    0%,
+    4% {
+        transform: translate(0, 0);
+    }
+
+    4.1%,
+    25% {
+        transform: translate(0, 0);
+    }
+
+    25%,
+    29% {
+        transform: translate(0, calc(-100% - 24px));
+    }
+
+    29.1%,
+    50% {
+        transform: translate(0, calc(-100% - 24px));
+    }
+
+    50%,
+    54% {
+        transform: translate(calc(-100% - 24px), calc(-100% - 24px));
+    }
+
+    54.1%,
+    75% {
+        transform: translate(calc(-100% - 24px), calc(-100% - 24px));
+    }
+
+    75%,
+    79% {
+        transform: translate(calc(-100% - 24px), 0);
+    }
+
+    79.1%,
+    100% {
+        transform: translate(calc(-100% - 24px), 0);
+    }
+}
+
+/* Apply smooth sliding animations to grid cards - 24s for 5s pause between each move */
+.grid-card:nth-child(1) {
+    animation: slideCard1 24s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+.grid-card:nth-child(2) {
+    animation: slideCard2 24s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+.grid-card:nth-child(3) {
+    animation: slideCard3 24s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+.grid-card:nth-child(4) {
+    animation: slideCard4 24s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+}
+
+/* Keyframes for counter-clockwise rotation */
+@keyframes rotateCard1 {
+
+    0%,
+    100% {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    25% {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    50% {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    75% {
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+@keyframes rotateCard2 {
+
+    0%,
+    100% {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    25% {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    50% {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    75% {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+
+@keyframes rotateCard3 {
+
+    0%,
+    100% {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    25% {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    50% {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    75% {
+        grid-column: 1;
+        grid-row: 1;
+    }
+}
+
+@keyframes rotateCard4 {
+
+    0%,
+    100% {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    25% {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    50% {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    75% {
+        grid-column: 1;
+        grid-row: 2;
+    }
+}
+
+.grid-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-purple {
+    background-color: var(--accent-purple);
+    color: #000;
+}
+
+.card-yellow {
+    background-color: var(--accent-yellow);
+    color: #000;
+}
+
+.card-icon {
+    width: 48px;
+    height: 48px;
+    background: #000;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.card-text {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.card-plus {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+/* Right Form Side */
+.auth-form-side {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--bg-black);
+    position: relative;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-header {
+    margin-bottom: 24px;
+}
+
+.auth-header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.auth-header p {
+    color: var(--text-gray);
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-input-container {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: var(--text-white);
+    font-size: 13px;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    background-color: var(--input-bg);
+}
+
+.form-label {
+    position: absolute;
+    left: 14px;
+    top: -9px;
+    background-color: var(--bg-black);
+    padding: 0 6px;
+    font-size: 11px;
+    color: var(--text-gray);
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: var(--btn-white);
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.02);
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--text-gray);
+    font-size: 11px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--input-border);
+}
+
+.divider span {
+    padding: 0 10px;
+}
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.btn-social {
+    background-color: var(--btn-dark);
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    color: var(--text-white);
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-social:hover {
+    background-color: #3f3f46;
+}
+
+.back-link {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--text-white);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .auth-visual {
+        display: none;
+    }
+
+    .auth-form-side {
+        width: 100%;
+    }
+}

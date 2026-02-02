@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "category": "Fiction",
+        "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800",
+        "pdf": null,
+        "available": true,
+        "description": "A story of decadence and excess in the Jazz Age."
+    },
+    {
+        "id": 2,
+        "title": "1984",
+        "author": "George Orwell",
+        "category": "Sci-Fi",
+        "cover": "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800",
+        "pdf": null,
+        "available": true,
+        "description": "Dystopian social science fiction novel."
+    },
+    {
+        "id": 3,
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "category": "Fiction",
+        "cover": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800",
+        "pdf": null,
+        "available": true,
+        "description": "A novel about racial injustice in the Deep South."
+    },
+    {
+        "id": 4,
+        "title": "A Brief History of Time",
+        "author": "Stephen Hawking",
+        "category": "Non-Fiction",
+        "cover": "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800",
+        "pdf": "brief_history.pdf",
+        "available": true,
+        "description": "Modern physics for general readers."
+    },
+    {
+        "id": 5,
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "category": "Sci-Fi",
+        "cover": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=800",
+        "pdf": null,
+        "available": true,
+        "description": "Epic science fiction set on the desert planet Arrakis."
+    }
+]
