@@ -141,15 +141,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     let ratingStarsInitialized = false;
     let isSubmittingRating = false;
 
-    // Load books from API database
-    async function loadAdminBooks() {
+    // Load users from API database
+    async function loadAdminUsers() {
         try {
-            const response = await fetch(`${API_BASE}/books`);
+            const response = await fetch(`${API_BASE}/auth?action=list`);
             const result = await response.json();
             if (result.success && Array.isArray(result.data)) {
-                return result.data.map(book => ({
-                    id: book.id,
-                    title: book.title,
+                return result.data.map(user => ({
+                    id: user.id,
+                    title: user.title,
+                    // ... other properties ...
                     author: book.author,
                     category: book.category || 'General',
                     status: book.available ? 'available' : 'checked_out',
@@ -904,7 +905,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!currentUser || !currentUser.id) return;
 
         try {
-            const response = await fetch(`${API_BASE}/favorites?action=list&userId=${currentUser.id}`);
+            const response = await fetch(`${API_BASE}/lists?type=favorites&userId=${currentUser.id}`);
             const result = await response.json();
 
             if (result.success && Array.isArray(result.data)) {
@@ -949,7 +950,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         try {
-            const response = await fetch(`${API_BASE}/recent?action=list&userId=${currentUser.id}`);
+            const response = await fetch(`${API_BASE}/discover?action=recent&userId=${currentUser.id}`);
             const result = await response.json();
             if (result.success && Array.isArray(result.data)) {
                 recentlyRead = result.data;
@@ -967,7 +968,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!currentUser || !currentUser.id || !bookId) return;
 
         try {
-            await fetch(`${API_BASE}/recent?action=track`, {
+            await fetch(`${API_BASE}/discover?action=track`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -996,7 +997,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const action = inWishlist ? 'remove' : 'add';
 
         try {
-            const response = await fetch(`${API_BASE}/favorites?action=${action}`, {
+            const response = await fetch(`${API_BASE}/lists?action=${action}&type=favorites`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -1298,7 +1299,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!currentUser || !currentUser.id) return;
 
         try {
-            const response = await fetch(`${API_BASE}/notifications?action=listForUser&userId=${currentUser.id}`);
+            const response = await fetch(`${API_BASE}/user?action=notifications&userId=${currentUser.id}`);
             const result = await response.json();
             if (!result.success || !Array.isArray(result.data) || !result.data.length) return;
 
@@ -1339,7 +1340,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             try {
                 await Promise.all(relevantNudges.map(n => {
                     if (!n.id) return null;
-                    return fetch(`${API_BASE}/notifications?action=markRead`, {
+                    return fetch(`${API_BASE}/user?action=markRead`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ id: n.id, userId: currentUser.id })
@@ -1596,7 +1597,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!currentUser || !currentUser.id) return;
 
         try {
-            const response = await fetch(`${API_BASE}/profile?userId=${currentUser.id}`);
+            const response = await fetch(`${API_BASE}/user?action=profile&userId=${currentUser.id}`);
             const result = await response.json();
             if (result.success && result.data) {
                 const data = result.data;
@@ -1636,7 +1637,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 email: email
             };
 
-            const response = await fetch(`${API_BASE}/users?id=${currentUser.id}`, {
+            const response = await fetch(`${API_BASE}/auth?id=${currentUser.id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -2976,7 +2977,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     // Only expose contact number when the borrow is overdue
                     if (isOverdue && borrower.userId) {
                         try {
-                            const profileResp = await fetch(`${API_BASE}/profile?userId=${borrower.userId}`);
+                            const profileResp = await fetch(`${API_BASE}/user?action=profile&userId=${borrower.userId}`);
                             const profileResult = await profileResp.json();
                             const phone = profileResult && profileResult.success && profileResult.data ? profileResult.data.phone : null;
                             if (phone) {
@@ -3053,7 +3054,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 : (currentBookTitle || 'this book');
 
             try {
-                const response = await fetch(`${API_BASE}/notifications?action=borrowerNudge`, {
+                const response = await fetch(`${API_BASE}/user?action=borrowerNudge`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

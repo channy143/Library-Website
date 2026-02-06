@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 // Load members from database
 async function loadMembers() {
     try {
-        const response = await fetch(`${API_BASE}/users`);
+        const response = await fetch(`${API_BASE}/auth?action=list`);
         const result = await response.json();
         if (result.success && Array.isArray(result.data)) {
             members = result.data.map(user => ({
@@ -119,7 +119,7 @@ async function handleMemberSubmit(event) {
     try {
         if (editingMemberId) {
             // Update existing user
-            const response = await fetch(`${API_BASE}/users?id=${editingMemberId}`, {
+            const response = await fetch(`${API_BASE}/auth?id=${editingMemberId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userData)
@@ -138,7 +138,7 @@ async function handleMemberSubmit(event) {
                 fullName: userData.full_name,
                 role: userData.role
             };
-            const response = await fetch(`${API_BASE}/register`, {
+            const response = await fetch(`${API_BASE}/auth`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(registerData)
@@ -164,7 +164,7 @@ async function deleteMember(id) {
     if (!confirm('Are you sure you want to delete this member?')) return;
 
     try {
-        const response = await fetch(`${API_BASE}/users?id=${id}`, {
+        const response = await fetch(`${API_BASE}/auth?id=${id}`, {
             method: 'DELETE'
         });
         const result = await response.json();

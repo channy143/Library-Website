@@ -20,7 +20,7 @@ function loadCurrentUser() {
 async function loadWishlist() {
     if (!currentUser) return;
     try {
-        const response = await fetch(`${API_BASE}/wishlist?action=list&userId=${currentUser.id}`);
+        const response = await fetch(`${API_BASE}/lists?type=wishlist&userId=${currentUser.id}`);
         const result = await response.json();
         wishlist = result.success ? result.data : [];
     } catch (e) { wishlist = []; }
@@ -53,7 +53,7 @@ function renderWishlist() {
 
 async function removeFromWishlist(bookId) {
     try {
-        const response = await fetch(`${API_BASE}/wishlist?action=remove`, {
+        const response = await fetch(`${API_BASE}/lists?action=remove&type=wishlist`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ bookId, userId: currentUser.id })

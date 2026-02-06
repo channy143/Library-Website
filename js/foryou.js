@@ -32,16 +32,15 @@ async function loadData() {
 
         // Load history for stats
         const statsRes = await fetch(`${API_BASE}/history?action=stats&userId=${currentUser.id}`);
-        const statsResult = await statsRes.json();
-        stats = statsResult.success ? statsResult.data : null;
+        const recRes = await fetch(`${API_BASE}/discover?action=recommendations&userId=${currentUser.id}`);
 
         // Load wishlist (legacy wishlist table)
-        const wishRes = await fetch(`${API_BASE}/wishlist?action=list&userId=${currentUser.id}`);
+        const wishRes = await fetch(`${API_BASE}/lists?type=wishlist&userId=${currentUser.id}`);
         const wishResult = await wishRes.json();
         wishlist = wishResult.success ? wishResult.data : [];
 
         // Load favorites (favorite_books table)
-        const favRes = await fetch(`${API_BASE}/favorites?action=list&userId=${currentUser.id}`);
+        const favRes = await fetch(`${API_BASE}/lists?type=favorites&userId=${currentUser.id}`);
         const favResult = await favRes.json();
         favorites = favResult.success ? favResult.data : [];
 

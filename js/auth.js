@@ -47,7 +47,7 @@ async function handleLogin(event) {
     if (username === 'dimii' && password === 'kyutie') {
         const adminUser = {
             id: 'admin',
-            username: 'dimi',
+            username: 'dimii',
             email: 'admin@example.com',
             fullName: 'Admin User',
             role: 'admin'
@@ -63,7 +63,7 @@ async function handleLogin(event) {
     submitBtn.textContent = 'Logging in...';
 
     try {
-        const response = await fetch(`${API_BASE}/login`, {
+        const response = await fetch(`${API_BASE}/auth`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ async function handleLogin(event) {
         if (data.success) {
             sessionStorage.setItem('currentUser', JSON.stringify(data.user));
             const user = data.user || {};
-            const isAdmin = user.username === 'dimi' || user.id === 'admin' || user.role === 'admin';
+            const isAdmin = user.username === 'dimii' || user.id === 'admin' || user.role === 'admin';
             window.location.href = isAdmin ? 'admin-dashboard.html' : 'dashboard.html';
         } else {
             // Show error message
@@ -102,7 +102,7 @@ async function handleLogin(event) {
                 role: user.role
             };
             sessionStorage.setItem('currentUser', JSON.stringify(userObj));
-            const isAdmin = userObj.username === 'dimi' || userObj.id === 'admin' || userObj.role === 'admin';
+            const isAdmin = userObj.username === 'dimii' || userObj.id === 'admin' || userObj.role === 'admin';
             window.location.href = isAdmin ? 'admin-dashboard.html' : 'dashboard.html';
             return;
         } else {
@@ -167,7 +167,7 @@ async function handleRegister(event) {
     submitBtn.textContent = 'Creating Account...';
 
     try {
-        const response = await fetch(`${API_BASE}/register`, {
+        const response = await fetch(`${API_BASE}/auth`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

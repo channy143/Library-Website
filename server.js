@@ -21,20 +21,15 @@ const mimeTypes = {
 
 // API handlers
 const apiHandlers = {
-  '/api/login': require('./api/login.js'),
-  '/api/register': require('./api/register.js'),
+  '/api/auth': require('./api/auth.js'),
   '/api/books': require('./api/books.js'),
-  '/api/users': require('./api/users.js'),
   '/api/borrow': require('./api/borrow.js'),
-  '/api/favorites': require('./api/favorites.js'),
+  '/api/lists': require('./api/lists.js'),
   '/api/history': require('./api/history.js'),
-  '/api/wishlist': require('./api/wishlist.js'),
   '/api/ratings': require('./api/ratings.js'),
-  '/api/recent': require('./api/recent.js'),
-  '/api/recommendations': require('./api/recommendations.js'),
   '/api/reserve': require('./api/reserve.js'),
-  '/api/notifications': require('./api/notifications.js'),
-  '/api/profile': require('./api/profile.js')
+  '/api/discover': require('./api/discover.js'),
+  '/api/user': require('./api/user.js')
 };
 
 const server = http.createServer((req, res) => {
