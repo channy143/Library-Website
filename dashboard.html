@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -717,4 +718,725 @@
     <script src="js/dashboard.js"></script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gravity Library</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+    <!-- Particles Background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="dashboard-wrapper">
+        <!-- Header & Navigation -->
+        <header class="dashboard-header">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book-open" style="color: #bd9eff; font-size: 24px;"></i>
+                </div>
+                <span class="logo-text">Gravity Library</span>
+            </a>
+
+            <nav class="main-nav">
+                <a href="#" class="nav-item active" data-target="home-section"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-item" data-target="catalog-section"><i class="fas fa-search"></i> Catalog</a>
+                <a href="#" class="nav-item" data-target="history-section"><i class="fas fa-history"></i> History</a>
+                <a href="#" class="nav-item" data-target="due-dates-section"><i class="fas fa-calendar-alt"></i> Due
+                    Dates</a>
+                <a href="#" class="nav-item" data-target="reservations-section"><i class="fas fa-bookmark"></i>
+                    Reservations</a>
+                <a href="#" class="nav-item" data-target="wishlist-section"><i class="fas fa-heart"></i> Wishlist</a>
+                <a href="#" class="nav-item" data-target="recent-section"><i class="fas fa-history"></i> Recently Read</a>
+                <a href="#" class="nav-item" data-target="stats-section"><i class="fas fa-chart-bar"></i> Stats</a>
+                <a href="#" class="nav-item" data-target="for-you-section"><i class="fas fa-magic"></i> For You</a>
+            </nav>
+
+            <div class="user-actions">
+                <div class="user-profile" id="profile-trigger" data-target="profile-section">
+                    <div class="user-info">
+                        <span class="user-name">Christian Salinas</span>
+                        <span class="user-role">Member</span>
+                    </div>
+                    <div class="avatar">CS</div>
+                </div>
+                <a href="index.html" class="nav-item" style="color: #ff6b6b;"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <!-- HOME SECTION -->
+            <section id="home-section" class="dashboard-section active">
+                <div class="welcome-banner animate-on-show">
+                    <div class="banner-text">
+                        <h1>Welcome back, Christian!</h1>
+                        <p>You have 2 books due this week. Happy reading!</p>
+                    </div>
+                    <div class="banner-action">
+                        <button class="btn-primary-small"
+                            style="background: white; color: #9b59b6; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">View
+                            Due Books</button>
+                    </div>
+                </div>
+
+                <div class="stats-grid animate-on-show">
+                    <div class="stat-card">
+                        <div class="stat-icon-box">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>12</h3>
+                            <p>Books Read</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon-box">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>2</h3>
+                            <p>Due Soon</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon-box">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>1</h3>
+                            <p>Reserved</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity / Recommendations -->
+                <div class="section-header">
+                    <h2 class="section-title">Continue Reading</h2>
+                    <a href="#" class="view-all">View History <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="content-grid" id="home-continue-grid">
+                </div>
+
+            </section>
+
+            <!-- STATS SECTION -->
+            <section id="stats-section" class="dashboard-section">
+                <div class="section-header animate-on-show">
+                    <h2 class="section-title">Reading Statistics</h2>
+                    <div class="stats-period-selector">
+                        <span class="active">Week</span>
+                        <span>Month</span>
+                        <span>Year</span>
+                    </div>
+                </div>
+
+                <div class="stats-bento-grid animate-on-show">
+                    <!-- Metric 1 -->
+                    <div class="bento-card metric-card">
+                        <div class="metric-icon" style="background: rgba(46, 204, 113, 0.2); color: #2ecc71;">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>12</h3>
+                            <p>Books Read</p>
+                        </div>
+                    </div>
+
+                    <!-- Metric 2 -->
+                    <div class="bento-card metric-card">
+                        <div class="metric-icon" style="background: rgba(155, 89, 182, 0.2); color: #9b59b6;">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>4,250</h3>
+                            <p>Pages Read</p>
+                        </div>
+                    </div>
+
+                    <!-- Metric 3 -->
+                    <div class="bento-card metric-card">
+                        <div class="metric-icon" style="background: rgba(241, 196, 15, 0.2); color: #f1c40f;">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>5 Days</h3>
+                            <p>Current Streak</p>
+                        </div>
+                    </div>
+
+                    <!-- Metric 4 -->
+                    <div class="bento-card metric-card">
+                        <div class="metric-icon" style="background: rgba(52, 152, 219, 0.2); color: #3498db;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="metric-info">
+                            <h3>42h</h3>
+                            <p>Reading Time</p>
+                        </div>
+                    </div>
+
+                    <!-- Activity Chart (Large) -->
+                    <div class="bento-card chart-card large">
+                        <div class="card-header">
+                            <h4>Reading Activity</h4>
+                            <i class="fas fa-ellipsis-h" style="color: var(--text-gray);"></i>
+                        </div>
+                        <div class="bar-chart-container">
+                            <div class="bar-group">
+                                <div class="bar" data-height="40%"></div>
+                                <span class="label">Mon</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar" data-height="60%"></div>
+                                <span class="label">Tue</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar active" data-height="85%"></div>
+                                <span class="label">Wed</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar" data-height="50%"></div>
+                                <span class="label">Thu</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar" data-height="30%"></div>
+                                <span class="label">Fri</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar" data-height="70%"></div>
+                                <span class="label">Sat</span>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar" data-height="45%"></div>
+                                <span class="label">Sun</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Genre Distribution (Medium) -->
+                    <div class="bento-card chart-card medium">
+                        <div class="card-header">
+                            <h4>Top Genres</h4>
+                        </div>
+                        <div class="donut-chart-container">
+                            <div class="donut-chart">
+                                <div class="center-text">
+                                    <span>Total</span>
+                                    <strong>12</strong>
+                                </div>
+                            </div>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <div class="dot" style="background: #9b59b6;"></div> Sci-Fi
+                                </div>
+                                <div class="legend-item">
+                                    <div class="dot" style="background: #3498db;"></div> Fantasy
+                                </div>
+                                <div class="legend-item">
+                                    <div class="dot" style="background: #e74c3c;"></div> Mystery
+                                </div>
+                                <div class="legend-item">
+                                    <div class="dot" style="background: #f1c40f;"></div> History
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Goal -->
+                    <div class="bento-card goal-card">
+                        <div class="progress-ring-container">
+                            <svg class="progress-ring" width="120" height="120">
+                                <circle class="progress-ring__circle" stroke="#9b59b6" stroke-width="8"
+                                    fill="transparent" r="52" cx="60" cy="60"
+                                    style="stroke-dasharray: 326.726; stroke-dashoffset: 326.726;" />
+                            </svg>
+                            <div class="ring-text">80%</div>
+                        </div>
+                        <div class="goal-info">
+                            <p class="goal-subtext">Monthly Goal</p>
+                            <span class="goal-target">4 / 5 Books</span>
+                        </div>
+                    </div>
+
+                    <!-- Average Rating -->
+                    <div class="bento-card rating-card">
+                        <div class="card-header">
+                            <h4>Avg Rating</h4>
+                        </div>
+                        <div class="rating-display">
+                            <div class="big-rating">4.8</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p style="color: var(--text-gray); font-size: 13px;">Based on 12 books</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CATALOG SECTION -->
+            <section id="catalog-section" class="dashboard-section">
+                <div class="section-header animate-on-show">
+                    <h2 class="section-title">Library Catalog</h2>
+                </div>
+
+                <div class="search-container animate-on-show">
+                    <input type="text" class="search-input" id="catalog-search"
+                        placeholder="Search for books, authors, or genres...">
+                    <button class="filter-btn" id="catalog-filter-btn"><i class="fas fa-filter"></i> Filters</button>
+                </div>
+
+                <!-- Filter Dropdown -->
+                <div class="filter-dropdown" id="filter-dropdown" style="display: none;">
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select id="category-filter" class="filter-select">
+                            <option value="">All Categories</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Status</label>
+                        <select id="status-filter" class="filter-select">
+                            <option value="">All Statuses</option>
+                            <option value="available">Available</option>
+                            <option value="checked_out">Checked Out</option>
+                            <option value="in_transit">In Transit</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary-small" id="apply-filters">Apply Filters</button>
+                    <button class="btn-secondary-small" id="clear-filters" style="margin-left: 8px;">Clear</button>
+                </div>
+
+                <div class="content-grid animate-on-show" id="catalog-grid">
+                </div>
+            </section>
+
+            <!-- HISTORY SECTION -->
+            <section id="history-section" class="dashboard-section">
+                <div class="section-header animate-on-show">
+                    <h2 class="section-title">Reading History</h2>
+                </div>
+                <div class="section-hero animate-on-show history-hero">
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Books read</span>
+                        <span class="section-hero-value" id="history-hero-total">0</span>
+                    </div>
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">On-time returns</span>
+                        <span class="section-hero-value" id="history-hero-on-time">0</span>
+                    </div>
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Overdue returns</span>
+                        <span class="section-hero-value" id="history-hero-overdue">0</span>
+                    </div>
+                </div>
+                <div class="history-list animate-on-show" id="history-list">
+                </div>
+            </section>
+
+            <!-- DUE DATES SECTION -->
+            <section id="due-dates-section" class="dashboard-section">
+                <div class="section-header animate-on-show">
+                    <h2 class="section-title">Upcoming Due Dates</h2>
+                </div>
+                <div class="section-hero animate-on-show due-hero">
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Borrowed</span>
+                        <span class="section-hero-value" id="due-hero-borrowed">0</span>
+                    </div>
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Due soon</span>
+                        <span class="section-hero-value" id="due-hero-due-soon">0</span>
+                    </div>
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Overdue</span>
+                        <span class="section-hero-value" id="due-hero-overdue">0</span>
+                    </div>
+                </div>
+                <div class="due-dates-grid animate-on-show" id="due-dates-grid">
+                </div>
+            </section>
+
+            <!-- RESERVATIONS SECTION -->
+            <section id="reservations-section" class="dashboard-section">
+                <div class="section-header animate-on-show">
+                    <h2 class="section-title">My Reservations</h2>
+                </div>
+                <div class="section-hero animate-on-show reservations-hero">
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Active reservations</span>
+                        <span class="section-hero-value" id="reservations-hero-active">0</span>
+                    </div>
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Ready for pickup</span>
+                        <span class="section-hero-value" id="reservations-hero-ready">0</span>
+                    </div>
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Expired</span>
+                        <span class="section-hero-value" id="reservations-hero-expired">0</span>
+                    </div>
+                </div>
+                <div class="reservations-list animate-on-show">
+                    <div class="reservations-list" id="active-reservations-list">
+                        <!-- Active reservations injected by JS -->
+
+                    </div>
+                    <div class="expired-reservations" id="expired-reservations" style="margin-top: 24px;">
+                        <!-- Expired reservations header + items injected by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- WISHLIST SECTION -->
+            <section id="wishlist-section" class="dashboard-section">
+                <div class="section-header animate-on-show">
+                    <h2 class="section-title">My Wishlist</h2>
+                </div>
+                <div class="section-hero animate-on-show wishlist-hero">
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Saved titles</span>
+                        <span class="section-hero-value" id="wishlist-hero-count">0</span>
+                    </div>
+                </div>
+                <div class="wishlist-grid animate-on-show" id="wishlist-grid">
+                </div>
+            </section>
+
+            <!-- RECENTLY READ SECTION -->
+            <section id="recent-section" class="dashboard-section">
+                <div class="section-header animate-on-show">
+                    <h2 class="section-title">Recently Read</h2>
+                </div>
+                <div class="section-hero animate-on-show recent-hero">
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Recently finished</span>
+                        <span class="section-hero-value" id="recent-hero-count">0</span>
+                    </div>
+                    <div class="section-hero-metric">
+                        <span class="section-hero-label">Last activity</span>
+                        <span class="section-hero-value" id="recent-hero-last">–</span>
+                    </div>
+                </div>
+                <div class="content-grid animate-on-show" id="recent-grid">
+                </div>
+            </section>
+
+            <!-- FOR YOU SECTION -->
+            <section id="for-you-section" class="dashboard-section">
+                <div class="section-header animate-on-show">
+                    <h2 class="section-title">For You</h2>
+                </div>
+
+                <div class="for-you-hero animate-on-show" id="for-you-hero">
+                    <div class="for-you-hero-main">
+                        <div class="for-you-hero-eyebrow">Smart recommendations</div>
+                        <h2 class="for-you-hero-title" id="for-you-hero-title">Discover your next favorite read</h2>
+                        <p class="for-you-hero-subtitle" id="for-you-hero-subtitle">
+                            Suggestions based on what you borrow, finish, and save.
+                        </p>
+                    </div>
+                    <div class="for-you-hero-stats">
+                        <div class="for-you-hero-stat">
+                            <span class="label">Books read</span>
+                            <span class="value" id="for-you-stat-read">0</span>
+                        </div>
+                        <div class="for-you-hero-stat">
+                            <span class="label">Active borrows</span>
+                            <span class="value" id="for-you-stat-active">0</span>
+                        </div>
+                        <div class="for-you-hero-stat">
+                            <span class="label">Wishlist</span>
+                            <span class="value" id="for-you-stat-wishlist">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="for-you-columns animate-on-show">
+                    <div class="for-you-column">
+                        <div class="for-you-column-header">
+                            <h3>Continue reading</h3>
+                            <span class="pill">From your borrows &amp; recent</span>
+                        </div>
+                        <div class="for-you-mini-grid" id="for-you-continue-grid"></div>
+                    </div>
+                    <div class="for-you-column">
+                        <div class="for-you-column-header">
+                            <h3 id="for-you-category-title">Because you like Sci-Fi</h3>
+                            <span class="pill">Top picks in your favorite genre</span>
+                        </div>
+                        <div class="for-you-mini-grid" id="for-you-category-grid"></div>
+                    </div>
+                    <div class="for-you-column">
+                        <div class="for-you-column-header">
+                            <h3>From your wishlist</h3>
+                            <span class="pill">Easy wins to start next</span>
+                        </div>
+                        <div class="for-you-mini-grid" id="for-you-wishlist-grid"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROFILE SECTION -->
+            <section id="profile-section" class="dashboard-section">
+                <div class="section-header animate-on-show">
+                    <h2 class="section-title">My Profile</h2>
+                </div>
+                <div class="profile-hero animate-on-show">
+                    <div class="profile-hero-main">
+                        <div class="profile-hero-eyebrow">Account overview</div>
+                        <h2 class="profile-hero-title" id="profile-hero-title">Reading snapshot</h2>
+                        <p class="profile-hero-subtitle" id="profile-hero-subtitle">Keep track of your activity and membership at a glance.</p>
+                    </div>
+                    <div class="profile-hero-metrics">
+                        <div class="profile-hero-metric">
+                            <span class="label">Books read</span>
+                            <span class="value" id="profile-hero-books">0</span>
+                        </div>
+                        <div class="profile-hero-metric">
+                            <span class="label">Active loans</span>
+                            <span class="value" id="profile-hero-active">0</span>
+                        </div>
+                        <div class="profile-hero-metric">
+                            <span class="label">Wishlist</span>
+                            <span class="value" id="profile-hero-wishlist">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-container animate-on-show">
+                    <div class="profile-layout">
+                        <div class="profile-left">
+
+                            <div class="profile-avatar-wrapper">
+                                <div class="profile-avatar-large" id="profile-avatar">
+                                    <span id="profile-avatar-initials">CS</span>
+                                </div>
+                            </div>
+                            <div class="profile-basic-info">
+                                <h3 id="profile-display-name">Christian Salinas</h3>
+                                <p class="profile-role" id="profile-role">Member</p>
+                                <p class="profile-email-display" id="profile-email-display">christian@example.com</p>
+                            </div>
+                        </div>
+                        <div class="profile-right">
+                            <div class="profile-info-card">
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" class="form-control" id="profile-full-name" value="Christian Salinas">
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" class="form-control" id="profile-email" value="christian@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" class="form-control" id="profile-phone" placeholder="e.g. +63 900 000 0000">
+                                </div>
+                                <div class="form-group">
+                                    <label>Bio</label>
+                                    <textarea class="form-control" id="profile-bio" rows="3" placeholder="Tell us a little about yourself"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Membership ID</label>
+                                    <input type="text" class="form-control" id="profile-membership-id" value="LIB-2023-8842" readonly style="opacity: 0.7;">
+                                </div>
+                                <div class="form-group">
+                                    <label>Change Password</label>
+                                    <input type="password" class="form-control" id="profile-password" placeholder="New Password">
+                                </div>
+                                <button class="btn-primary">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-stacks">
+                        <div class="profile-books-card">
+                            <div class="profile-card-header">
+                                <h3>Borrowed Books</h3>
+                            </div>
+                            <div class="profile-book-list" id="profile-borrowed-list"></div>
+                        </div>
+                        <div class="profile-books-card">
+                            <div class="profile-card-header">
+                                <h3>Favorites</h3>
+                            </div>
+                            <div class="profile-book-list" id="profile-favorites-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="dashboard-footer">
+            <p>&copy; 2025 Gravity Library. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Book Details Modal -->
+    <div class="modal-overlay" id="book-modal">
+        <div class="book-modal">
+            <button class="modal-close" id="modal-close"><i class="fas fa-times"></i></button>
+
+            <div class="modal-body">
+
+                <div class="modal-cover-container">
+                    <img src="" alt="Book Cover" class="modal-cover" id="modal-cover">
+                </div>
+                <div class="modal-details">
+                    <span class="modal-tag" id="modal-tag">Genre</span>
+                    <div class="modal-title-row">
+                        <h2 class="modal-title" id="modal-title">Book Title</h2>
+                        <div class="modal-favorite-actions">
+                            <button class="card-action-btn btn-favorite" id="modal-favorite-btn" type="button" title="Add to favorites">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                            <button class="card-action-btn btn-borrower-info" id="modal-borrower-btn" type="button" title="Show borrower info">
+                                <i class="fas fa-user"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="modal-author" id="modal-author">Author Name</p>
+
+                    <div class="modal-rating">
+                        <div class="modal-rating-summary">
+                            <div class="modal-rating-stars" id="modal-rating-stars"></div>
+                            <span class="modal-rating-average" id="modal-rating-average">4.8</span>
+                            <span class="modal-rating-count" id="modal-rating-count">(0 reviews)</span>
+                        </div>
+                        <div class="modal-rating-user">
+                            <span class="modal-rating-user-label" id="modal-user-rating-label">Your rating:</span>
+                            <div class="modal-rating-stars editable" id="modal-user-rating-stars"></div>
+                        </div>
+                    </div>
+
+                    <div class="modal-meta-grid">
+                        <div class="meta-item">
+                            <h4>Pages</h4>
+                            <p>412</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Publisher</h4>
+                            <p>Penguin</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Year</h4>
+                            <p>2021</p>
+                        </div>
+                    </div>
+                    <div class="reservation-summary" id="reservation-summary">
+                        <div class="reservation-summary-header">
+                            <span class="reservation-status-chip" id="reservation-status-chip">Reserved</span>
+                            <span class="reservation-queue-label" id="reservation-queue-label">You are #3 in line</span>
+                        </div>
+                        <p class="reservation-wait" id="reservation-wait">Estimated wait: 2 weeks</p>
+                    </div>
+
+                    <div class="modal-description">
+                        <h3>Synopsis</h3>
+                        <p id="modal-desc">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    </div>
+
+                    <!-- Borrowing Stats Display -->
+                    <div class="borrowing-stats" id="borrowing-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-book"></i>
+                            <span id="borrowed-count">0</span>/<span id="max-borrowed">5</span> books borrowed
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-bookmark"></i>
+                            <span id="reserved-count">0</span>/<span id="max-reserved">3</span> reservations
+                        </div>
+                    </div>
+
+                    <!-- Reservation Date Picker (shown when reserving) -->
+                    <div class="reservation-date-picker" id="reservation-date-section" style="display: none;">
+                        <label for="reservation-date-input"><i class="fas fa-calendar-alt"></i> Preferred Pickup
+                            Date</label>
+                        <input type="date" id="reservation-date-input" class="date-input">
+                        <p class="date-hint">Select when you'd like to pick up this book (1-30 days from today)</p>
+                        <div class="reservation-confirm-actions" id="reservation-confirm-actions" style="display: none; margin-top: 12px; gap: 8px;">
+                            <button class="btn-action btn-confirm-reservation" id="btn-confirm-reservation">Confirm</button>
+                            <button class="btn-action btn-cancel-reservation" id="btn-cancel-reservation">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Book Due Info (shown when user has borrowed this book) -->
+                    <div class="book-due-info" id="book-due-info" style="display: none;">
+                        <div class="due-status">
+                            <span class="due-label">Due Date:</span>
+                            <span class="due-date" id="modal-due-date">Dec 21, 2025</span>
+                        </div>
+                        <div class="renewals-left">
+                            <span>Renewals remaining:</span>
+                            <span id="renewals-left">2</span>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-action btn-download"><i class="fas fa-file-pdf"></i> Download PDF</button>
+                        <button class="btn-action btn-borrow" id="btn-borrow"><i class="fas fa-book-reader"></i> Borrow
+                            Book</button>
+                        <button class="btn-action btn-reserve" id="btn-reserve-book"><i class="fas fa-bookmark"></i>
+                            Reserve</button>
+                        <button class="btn-action btn-return" id="btn-return" style="display: none;"><i
+                                class="fas fa-undo"></i> Return Book</button>
+                        <button class="btn-action btn-renew" id="btn-renew" style="display: none;"><i
+                                class="fas fa-sync-alt"></i> Renew (+7 days)</button>
+                        <button class="btn-action btn-reservation-primary" id="reservation-primary-action"
+                            style="display: none;"></button>
+                    </div>
+
+                    <!-- Action Feedback -->
+                    <div id="action-feedback" class="action-feedback"></div>
+
+                    <!-- Reservation Details (Hidden by default) -->
+                    <div id="reservation-details" class="reservation-details">
+                        <div class="reservation-header">
+                            <span>Current Reservations</span>
+                            <span style="font-size: 12px; color: var(--text-gray);"><i class="fas fa-info-circle"></i>
+                                Queue Status</span>
+                        </div>
+                        <div class="user-list" id="reservation-list">
+                            <!-- User Cards will be injected here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Logic -->
+    <script src="js/dashboard.js"></script>
+</body>
+
+>>>>>>> 4e6976ce7b18fad30f88155961a380fe427f8583
 </html>

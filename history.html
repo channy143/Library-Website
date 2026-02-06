@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,4 +71,78 @@
     <script src="js/history.js"></script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading History - Gravity Library</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/history.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>📚 Gravity</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="books.html"><i class="fas fa-book"></i> Browse Books</a></li>
+                <li><a href="due-dates.html"><i class="fas fa-clock"></i> Due Dates</a></li>
+                <li><a href="history.html" class="active"><i class="fas fa-history"></i> History</a></li>
+                <li><a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                <li><a href="stats.html"><i class="fas fa-chart-bar"></i> My Stats</a></li>
+                <li><a href="foryou.html"><i class="fas fa-magic"></i> For You</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="login.html" class="logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div class="header-left">
+                    <h1>Reading History</h1>
+                    <p>Books you've read and returned</p>
+                </div>
+                <div class="header-right">
+                    <div class="user-info">
+                        <span id="userName">Guest</span>
+                        <div class="user-avatar" id="userAvatar">G</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="stats-row">
+                <div class="stat-card">
+                    <span class="stat-value" id="totalRead">0</span>
+                    <span class="stat-label">Books Read</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-value" id="onTimeReturns">0</span>
+                    <span class="stat-label">On-Time Returns</span>
+                </div>
+            </div>
+
+            <section class="history-section">
+                <div class="history-list" id="historyList">
+                    <div class="empty-state" id="emptyState">
+                        <i class="fas fa-book-reader"></i>
+                        <h3>No reading history yet</h3>
+                        <p>Finish reading books to see them here.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/history.js"></script>
+</body>
+
+>>>>>>> 4e6976ce7b18fad30f88155961a380fe427f8583
 </html>
