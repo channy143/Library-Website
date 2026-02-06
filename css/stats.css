@@ -1,0 +1,247 @@
+/* Stats Page Styles */
+:root {
+    --bg-dark: #0a0a0f;
+    --bg-panel: #12121a;
+    --bg-card: #1a1a24;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-white: #fff;
+    --text-gray: #888;
+    --accent-purple: #a855f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-white);
+    min-height: 100vh;
+}
+
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background: var(--bg-panel);
+    border-right: 1px solid var(--border-color);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo h2 {
+    font-size: 20px;
+    margin-bottom: 32px;
+}
+
+.nav-links {
+    list-style: none;
+    flex: 1;
+}
+
+.nav-links li {
+    margin-bottom: 8px;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    color: var(--text-gray);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-white);
+}
+
+.nav-links a.active {
+    background: rgba(168, 85, 247, 0.15);
+    color: var(--accent-purple);
+}
+
+.sidebar-footer {
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-gray);
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 240px;
+    padding: 32px 40px;
+}
+
+.page-header {
+    margin-bottom: 32px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.stat-card.big {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(108, 61, 186, 0.2));
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.stat-value {
+    display: block;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--accent-purple);
+    margin-bottom: 4px;
+}
+
+.stat-card.big .stat-value {
+    font-size: 48px;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--text-gray);
+}
+
+.chart-section,
+.categories-section {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.chart-section h2,
+.categories-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    min-height: 200px;
+}
+
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 180px;
+    gap: 16px;
+}
+
+.bar-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 60px;
+}
+
+.bar {
+    background: linear-gradient(to top, var(--accent-purple), #c084fc);
+    border-radius: 6px 6px 0 0;
+    width: 100%;
+    min-height: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+    transition: height 0.3s;
+}
+
+.bar span {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bar-label {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+.category-bar {
+    margin-bottom: 16px;
+}
+
+.category-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.category-name {
+    font-size: 14px;
+}
+
+.category-count {
+    font-size: 13px;
+    color: var(--text-gray);
+}
+
+.bar-bg {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    background: var(--accent-purple);
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s;
+}
+
+@media (max-width: 1000px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}

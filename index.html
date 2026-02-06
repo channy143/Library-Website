@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Library - Welcome</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="welcome-body">
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="welcome-wrapper">
+        <!-- Header -->
+        <header class="main-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="url(#logoGrad)" stroke-width="2"
+                            stroke-linejoin="round" />
+                        <path d="M2 17L12 22L22 17" stroke="url(#logoGrad)" stroke-width="2" stroke-linejoin="round" />
+                        <path d="M2 12L12 17L22 12" stroke="url(#logoGrad)" stroke-width="2" stroke-linejoin="round" />
+                        <defs>
+                            <linearGradient id="logoGrad" x1="2" y1="2" x2="22" y2="22">
+                                <stop stop-color="#bd9eff" />
+                                <stop offset="1" stop-color="#9b59b6" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">Gravity Library</span>
+            </div>
+            <nav class="header-nav">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <button class="btn-secondary" onclick="window.location.href='login.html'">Sign In</button>
+                <button class="btn-primary-small" onclick="window.location.href='register.html'">Get Started</button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-in">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                            fill="#ffd700" />
+                    </svg>
+                    <span>Award-Winning Digital Library</span>
+                </div>
+
+                <h1 class="hero-title animate-slide-up">
+                    Discover a World of
+                    <span class="gradient-text">Knowledge</span>
+                    at Your Fingertips
+                </h1>
+
+                <p class="hero-description animate-slide-up delay-1">
+                    Welcome to Gravity Library — your gateway to endless learning. Explore our vast collection
+                    of over 10,000 books, from timeless classics to modern bestsellers. Start your reading
+                    journey today!
+                </p>
+
+                <div class="hero-buttons animate-slide-up delay-2">
+                    <button class="cta-button" onclick="window.location.href='login.html'">
+                        <span>Start Exploring</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="cta-button-outline" onclick="window.location.href='#features'">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <polygon points="10,8 16,12 10,16" fill="currentColor" />
+                        </svg>
+                        <span>Watch Demo</span>
+                    </button>
+                </div>
+
+                <div class="hero-stats animate-fade-in delay-3">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="#9b59b6" stroke-width="2" />
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                                    stroke="#9b59b6" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number counter" data-target="10000">10K+</span>
+                            <span class="stat-label">Books</span>
+                        </div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <circle cx="9" cy="7" r="4" stroke="#9b59b6" stroke-width="2" />
+                                <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="#9b59b6" stroke-width="2" />
+                                <circle cx="19" cy="7" r="3" stroke="#9b59b6" stroke-width="2" />
+                                <path d="M17 14h4a2 2 0 0 1 2 2v2" stroke="#9b59b6" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">5K+</span>
+                            <span class="stat-label">Members</span>
+                        </div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"
+                                    stroke="#9b59b6" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-number">4.9</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Visual -->
+            <div class="hero-visual">
+                <div class="visual-container">
+                    <div class="cards-row">
+                        <div class="image-card card-left">
+                            <img src="Images/13690341654615927.jpg" alt="Library">
+                        </div>
+                        <div class="image-card card-center">
+                            <img src="Images/08c0ab76d2cfea62bfbfd89b98087de6.jpg" alt="Books">
+                        </div>
+                        <div class="image-card card-right">
+                            <img src="Images/My-Dress-Up-Darling-Vol.-2.jpg" alt="Reading">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="section-header">
+                <span class="section-badge">Features</span>
+                <h2 class="section-title">Everything You Need to <span class="gradient-text">Read & Learn</span></h2>
+                <p class="section-subtitle">Discover powerful features designed to enhance your reading experience</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="url(#feat1)" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                                stroke="url(#feat1)" stroke-width="2" />
+                            <path d="M8 7h8M8 11h6M8 15h4" stroke="url(#feat1)" stroke-width="2"
+                                stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="feat1" x1="4" y1="2" x2="20" y2="22">
+                                    <stop stop-color="#bd9eff" />
+                                    <stop offset="1" stop-color="#9b59b6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Browse Collection</h3>
+                    <p>Explore our vast library of over 10,000 carefully curated books across all genres</p>
+                    <a href="#" class="feature-link">
+                        Learn more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="url(#feat2)" stroke-width="2" />
+                            <path d="M12 6V12L16 14" stroke="url(#feat2)" stroke-width="2" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="feat2" x1="2" y1="2" x2="22" y2="22">
+                                    <stop stop-color="#bd9eff" />
+                                    <stop offset="1" stop-color="#9b59b6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Easy Borrowing</h3>
+                    <p>Borrow and return books with just one click. Set reminders for due dates</p>
+                    <a href="#" class="feature-link">
+                        Learn more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <circle cx="9" cy="7" r="4" stroke="url(#feat3)" stroke-width="2" />
+                            <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" stroke="url(#feat3)" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="url(#feat3)" stroke-width="2"
+                                stroke-linecap="round" />
+                            <path d="M21 21v-2a4 4 0 0 0-3-3.87" stroke="url(#feat3)" stroke-width="2"
+                                stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="feat3" x1="3" y1="3" x2="21" y2="21">
+                                    <stop stop-color="#bd9eff" />
+                                    <stop offset="1" stop-color="#9b59b6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Your Account</h3>
+                    <p>Personalized dashboard to track your reading journey and manage preferences</p>
+                    <a href="#" class="feature-link">
+                        Learn more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 3V21H21" stroke="url(#feat4)" stroke-width="2" stroke-linecap="round" />
+                            <path d="M7 16L12 11L15 14L21 8" stroke="url(#feat4)" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="21" cy="8" r="2" fill="#9b59b6" />
+                            <defs>
+                                <linearGradient id="feat4" x1="3" y1="3" x2="21" y2="21">
+                                    <stop stop-color="#bd9eff" />
+                                    <stop offset="1" stop-color="#9b59b6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Reading Stats</h3>
+                    <p>Track your progress with detailed analytics and reading insights</p>
+                    <a href="#" class="feature-link">
+                        Learn more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="11" width="18" height="11" rx="2" stroke="url(#feat5)" stroke-width="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="url(#feat5)" stroke-width="2" />
+                            <circle cx="12" cy="16" r="1" fill="#9b59b6" />
+                            <defs>
+                                <linearGradient id="feat5" x1="3" y1="7" x2="21" y2="22">
+                                    <stop stop-color="#bd9eff" />
+                                    <stop offset="1" stop-color="#9b59b6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Secure Access</h3>
+                    <p>Your data is protected with enterprise-grade security and encryption</p>
+                    <a href="#" class="feature-link">
+                        Learn more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 15V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="url(#feat6)"
+                                stroke-width="2" stroke-linecap="round" />
+                            <path d="M17 3L21 7L12 16H8V12L17 3Z" stroke="url(#feat6)" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <defs>
+                                <linearGradient id="feat6" x1="3" y1="3" x2="21" y2="21">
+                                    <stop stop-color="#bd9eff" />
+                                    <stop offset="1" stop-color="#9b59b6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Notes & Highlights</h3>
+                    <p>Take notes and highlight passages to enhance your learning experience</p>
+                    <a href="#" class="feature-link">
+                        Learn more
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="services-content">
+                <div class="services-text">
+                    <span class="section-badge">Our Services</span>
+                    <h2 class="section-title">A Complete Library <span class="gradient-text">Experience</span></h2>
+                    <p class="services-description">
+                        From borrowing physical books to accessing digital content, we provide a seamless
+                        experience for all your reading needs. Join thousands of satisfied readers today.
+                    </p>
+                    <ul class="services-list">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#9b59b6" fill-opacity="0.2" />
+                                <path d="M8 12L11 15L16 9" stroke="#9b59b6" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span>24/7 Digital Access to eBooks</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#9b59b6" fill-opacity="0.2" />
+                                <path d="M8 12L11 15L16 9" stroke="#9b59b6" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span>Same-Day Book Reservations</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#9b59b6" fill-opacity="0.2" />
+                                <path d="M8 12L11 15L16 9" stroke="#9b59b6" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span>Personalized Reading Recommendations</span>
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" fill="#9b59b6" fill-opacity="0.2" />
+                                <path d="M8 12L11 15L16 9" stroke="#9b59b6" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            <span>Reading Clubs & Community Events</span>
+                        </li>
+                    </ul>
+                    <button class="cta-button" onclick="window.location.href='register.html'">
+                        <span>Join Now — It's Free</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="services-visual">
+                    <div class="service-card sc-1">
+                        <div class="sc-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="#fff" stroke-width="2" />
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke="#fff"
+                                    stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h4>Physical Books</h4>
+                        <p>10,000+ titles</p>
+                    </div>
+                    <div class="service-card sc-2">
+                        <div class="sc-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                <rect x="5" y="2" width="14" height="20" rx="2" stroke="#fff" stroke-width="2" />
+                                <path d="M12 18H12.01" stroke="#fff" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h4>eBooks</h4>
+                        <p>5,000+ digital</p>
+                    </div>
+                    <div class="service-card sc-3">
+                        <div class="sc-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#fff" stroke-width="2" />
+                                <path d="M2 17L12 22L22 17" stroke="#fff" stroke-width="2" />
+                                <path d="M2 12L12 17L22 12" stroke="#fff" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <h4>Audiobooks</h4>
+                        <p>2,000+ hours</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="section-header">
+                <span class="section-badge">About Us</span>
+                <h2 class="section-title">Why Choose <span class="gradient-text">Gravity Library</span>?</h2>
+                <p class="section-subtitle">We're dedicated to making knowledge accessible to everyone</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="url(#about1)" stroke-width="2" />
+                            <path d="M2 12H22" stroke="url(#about1)" stroke-width="2" />
+                            <path
+                                d="M12 2C14.5 4.5 16 8 16 12C16 16 14.5 19.5 12 22C9.5 19.5 8 16 8 12C8 8 9.5 4.5 12 2Z"
+                                stroke="url(#about1)" stroke-width="2" />
+                            <defs>
+                                <linearGradient id="about1" x1="2" y1="2" x2="22" y2="22">
+                                    <stop stop-color="#bd9eff" />
+                                    <stop offset="1" stop-color="#9b59b6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Global Access</h3>
+                    <p>Access your favorite books from anywhere in the world, anytime you want</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                stroke="url(#about2)" stroke-width="2" />
+                            <path d="M12 16V12L9 10" stroke="url(#about2)" stroke-width="2" stroke-linecap="round" />
+                            <path d="M12 8V8.01" stroke="url(#about2)" stroke-width="2" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="about2" x1="2" y1="2" x2="22" y2="22">
+                                    <stop stop-color="#bd9eff" />
+                                    <stop offset="1" stop-color="#9b59b6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Always Available</h3>
+                    <p>Our platform is available 24/7 with 99.9% uptime guarantee</p>
+                </div>
+                <div class="about-card">
+                    <div class="about-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                            <rect x="3" y="11" width="18" height="11" rx="2" stroke="url(#about3)" stroke-width="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="url(#about3)" stroke-width="2" />
+                            <defs>
+                                <linearGradient id="about3" x1="3" y1="7" x2="21" y2="22">
+                                    <stop stop-color="#bd9eff" />
+                                    <stop offset="1" stop-color="#9b59b6" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h3>Secure & Private</h3>
+                    <p>Your reading history and personal data remain completely confidential</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Ready to Start Your Reading Journey?</h2>
+                <p>Join thousands of book lovers and discover your next favorite read today.</p>
+                <div class="cta-buttons">
+                    <button class="cta-button-large" onclick="window.location.href='register.html'">
+                        <span>Create Free Account</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer" id="contact">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="url(#footerGrad)" stroke-width="2" />
+                                <path d="M2 17L12 22L22 17" stroke="url(#footerGrad)" stroke-width="2" />
+                                <path d="M2 12L12 17L22 12" stroke="url(#footerGrad)" stroke-width="2" />
+                                <defs>
+                                    <linearGradient id="footerGrad" x1="2" y1="2" x2="22" y2="22">
+                                        <stop stop-color="#bd9eff" />
+                                        <stop offset="1" stop-color="#9b59b6" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Gravity Library</span>
+                    </div>
+                    <p class="footer-tagline">Your gateway to endless knowledge and imagination</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M18 2H15a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3V2Z"
+                                    stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 16 3a4.48 4.48 0 0 0-4.47 5.42A12.94 12.94 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3Z"
+                                    stroke="currentColor" stroke-width="2" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                                <circle cx="18" cy="6" r="1" fill="currentColor" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Quick Links</h5>
+                        <a href="login.html">Sign In</a>
+                        <a href="register.html">Create Account</a>
+                        <a href="#features">Features</a>
+                        <a href="#services">Services</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Resources</h5>
+                        <a href="#">Help Center</a>
+                        <a href="#">FAQs</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Tutorials</a>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Legal</h5>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Gravity Library. All rights reserved. Made with 💜 for book lovers</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

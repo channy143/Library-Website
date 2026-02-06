@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Gravity Library</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/admin-dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    <div class="admin-shell">
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                <div class="admin-logo-icon"><i class="fas fa-layer-group"></i></div>
+                <div class="admin-brand-text">
+                    <span class="admin-brand-name">Gravity Library</span>
+                    <span class="admin-brand-tag">Admin Console</span>
+                </div>
+            </div>
+            <div class="admin-user-mini">
+                <div class="admin-avatar" id="adminAvatar">AD</div>
+                <div class="admin-user-text">
+                    <span class="admin-user-name" id="adminUserName">Admin User</span>
+                    <span class="admin-user-role">System Administrator</span>
+                </div>
+            </div>
+            <nav class="admin-nav">
+                <button class="admin-nav-item active" data-section="admin-books">
+                    <i class="fas fa-book"></i>
+                    <span>Books Management</span>
+                </button>
+                <button class="admin-nav-item" data-section="admin-users">
+                    <i class="fas fa-users"></i>
+                    <span>User Management</span>
+                </button>
+                <button class="admin-nav-item" data-section="admin-stats">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Statistics</span>
+                </button>
+                <button class="admin-nav-item" data-section="admin-reservations">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Reservations</span>
+                </button>
+                <button class="admin-nav-item" data-section="admin-leaderboards">
+                    <i class="fas fa-trophy"></i>
+                    <span>Leaderboards</span>
+                </button>
+            </nav>
+            <div class="admin-sidebar-footer">
+                <button class="admin-logout" id="adminLogout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </button>
+            </div>
+        </aside>
+        <main class="admin-main">
+            <header class="admin-topbar">
+                <div class="admin-topbar-text">
+                    <h1 id="admin-section-title">Books Management</h1>
+                    <p id="admin-section-subtitle">Manage the catalog, availability, and inventory.</p>
+                </div>
+                <div class="admin-topbar-actions">
+                    <div class="admin-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search across admin data">
+                    </div>
+                </div>
+            </header>
+            <section id="admin-books" class="admin-section active">
+                <div class="admin-grid admin-grid-3">
+                    <div class="admin-card metric-card">
+                        <div class="metric-label">Total Books</div>
+                        <div class="metric-value" id="metric-total-books">1,240</div>
+                        <div class="metric-sub">Across all categories</div>
+                    </div>
+                    <div class="admin-card metric-card">
+                        <div class="metric-label">Checked Out</div>
+                        <div class="metric-value" id="metric-books-checked-out">238</div>
+                        <div class="metric-sub">Currently borrowed</div>
+                    </div>
+                    <div class="admin-card metric-card">
+                        <div class="metric-label">Overdue</div>
+                        <div class="metric-value danger" id="metric-books-overdue">17</div>
+                        <div class="metric-sub">Needs attention</div>
+                    </div>
+                </div>
+                <div class="admin-panel">
+                    <div class="admin-panel-header">
+                        <div class="admin-panel-title">Catalog snapshot</div>
+                        <div class="admin-panel-actions">
+                            <button class="admin-primary-button" type="button" id="book-open-modal">
+                                <i class="fas fa-plus"></i>
+                                <span>Add book</span>
+                            </button>
+                        </div>
+                    </div>
+                    <table class="admin-table" id="books-table">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Category</th>
+                                <th>Status</th>
+                                <th>Copies</th>
+                                <th>Reserved</th>
+                                <th>Reviews</th>
+                                <th>Reservations</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="books-table-body">
+                        </tbody>
+                    </table>
+                    <div class="book-calendar-panel" id="book-calendar-panel">
+                        <div class="book-calendar-header">
+                            <div>
+                                <h3 id="calendar-book-title">Reservations calendar</h3>
+                                <p id="calendar-book-subtitle">Select a book to view its reservation pattern.</p>
+                            </div>
+                            <button class="admin-ghost-button small" type="button" id="close-book-calendar">
+                                <i class="fas fa-times"></i>
+                                <span>Close</span>
+                            </button>
+                        </div>
+                        <div class="book-calendar-body" id="book-calendar-body">
+                            <p class="calendar-empty">Select a book to open its reservations calendar.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="admin-users" class="admin-section">
+                <div class="admin-grid admin-grid-3">
+                    <div class="admin-card metric-card">
+                        <div class="metric-label">Active Members</div>
+                        <div class="metric-value" id="metric-active-members">842</div>
+                        <div class="metric-sub">Using the system this month</div>
+                    </div>
+                    <div class="admin-card metric-card">
+                        <div class="metric-label">Staff Accounts</div>
+                        <div class="metric-value" id="metric-staff-accounts">18</div>
+                        <div class="metric-sub">Librarians and assistants</div>
+                    </div>
+                </div>
+                <div class="admin-panel">
+                    <div class="admin-panel-header">
+                        <div class="admin-panel-title">User overview</div>
+                        <div class="admin-panel-actions">
+                            <button class="admin-primary-button" type="button" id="user-open-modal">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Add user</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="admin-users-layout">
+                        <div class="user-cards-grid" id="user-cards-grid">
+                        </div>
+                        <aside class="user-history-panel" id="user-history-panel">
+                            <div class="user-history-header">
+                                <div>
+                                    <h3 id="history-user-name">Select a user</h3>
+                                    <p id="history-user-sub">Click an index card to see their borrowing history.</p>
+                                </div>
+                                <span class="reader-badge" id="reader-badge" style="display: none;">
+                                    <i class="fas fa-crown"></i>
+                                    Reader of the Month
+                                </span>
+                            </div>
+                            <ul class="user-history-list" id="user-history-list">
+                                <li class="user-history-empty">No user selected yet.</li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </section>
+            <section id="admin-stats" class="admin-section">
+                <div class="admin-panel admin-stats-hero">
+                    <div class="admin-stats-hero-main">
+                        <div class="admin-stats-hero-eyebrow">Library overview</div>
+                        <h2 class="admin-stats-hero-title">This month at a glance</h2>
+                        <p class="admin-stats-hero-subtitle" id="stat-hero-subtitle">Track how your collection and readers are performing.</p>
+                    </div>
+                    <div class="admin-stats-hero-right">
+                        <div class="admin-stats-hero-metrics">
+                            <div class="hero-metric">
+                                <span class="hero-metric-label">Loans this month</span>
+                                <span class="hero-metric-value" id="stat-hero-loans">0</span>
+                            </div>
+                            <div class="hero-metric">
+                                <span class="hero-metric-label">Active members</span>
+                                <span class="hero-metric-value" id="stat-hero-members">0</span>
+                            </div>
+                            <div class="hero-metric">
+                                <span class="hero-metric-label">Most active category</span>
+                                <span class="hero-metric-value" id="stat-hero-category">-</span>
+                            </div>
+                        </div>
+                        <div class="hero-sparkline">
+                            <div class="hero-sparkline-label" id="hero-loans-sparkline-label">Loans trend (no data yet)</div>
+                            <div class="hero-sparkline-bars" id="hero-loans-sparkline-bars"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-grid admin-grid-2">
+                    <div class="admin-panel">
+                        <div class="admin-panel-header">
+                            <div class="admin-panel-title">Circulation</div>
+                        </div>
+                        <div class="stats-row">
+                            <div class="stats-chip">
+                                <span class="chip-label">Loans this month</span>
+                                <span class="chip-value" id="stat-loans-month">426</span>
+                            </div>
+                            <div class="stats-chip">
+                                <span class="chip-label">Returns</span>
+                                <span class="chip-value" id="stat-returns-month">389</span>
+                            </div>
+                            <div class="stats-chip">
+                                <span class="chip-label">Members</span>
+                                <span class="chip-value" id="stat-new-members">32</span>
+                            </div>
+                        </div>
+                        <div class="placeholder-chart">Reading activity trend</div>
+                    </div>
+                    <div class="admin-panel">
+                        <div class="admin-panel-header">
+                            <div class="admin-panel-title">Collection health</div>
+                        </div>
+                        <ul class="stats-list">
+                            <li>
+                                <span>Average age of collection</span>
+                                <span id="stat-avg-age">4.2 years</span>
+                            </li>
+                            <li>
+                                <span>Digital vs physical</span>
+                                <span>64% / 36%</span>
+                            </li>
+                            <li>
+                                <span>Most active category</span>
+                                <span id="stat-most-active-category">Sci-Fi</span>
+                            </li>
+                            <li>
+                                <span>Idle titles (&lt; 1 loan/year)</span>
+                                <span id="stat-idle-titles">82</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="admin-reservations" class="admin-section">
+                <div class="admin-panel">
+                    <div class="admin-panel-header">
+                        <div class="admin-panel-title">Active reservations</div>
+                        <div class="admin-panel-actions">
+                            <button class="admin-primary-button" type="button" id="reservation-open-modal">
+                                <i class="fas fa-plus"></i>
+                                <span>Add reservation</span>
+                            </button>
+                        </div>
+                    </div>
+                    <table class="admin-table" id="reservations-table">
+                        <thead>
+                            <tr>
+                                <th>Book</th>
+                                <th>Member</th>
+                                <th>Status</th>
+                                <th>Queue position</th>
+                                <th>ETA</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reservations-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section id="admin-leaderboards" class="admin-section">
+                <div class="admin-panel admin-leaderboards-hero">
+                    <div class="admin-leaderboards-hero-main">
+                        <div class="admin-leaderboards-eyebrow">Engagement</div>
+                        <h2 class="admin-leaderboards-title">Top readers &amp; most loved titles</h2>
+                        <p class="admin-leaderboards-subtitle">See who is reading the most and which books are driving circulation.</p>
+                    </div>
+                </div>
+                <div class="admin-grid admin-grid-2">
+                    <div class="admin-panel">
+                        <div class="admin-panel-header">
+                            <div class="admin-panel-title">Top readers</div>
+                        </div>
+                        <div class="leaderboard-feature" id="top-reader-feature">
+                            <p class="leaderboard-feature-empty">No readers yet.</p>
+                        </div>
+                        <ol class="leaderboard-list" id="top-readers-list">
+                        </ol>
+                    </div>
+                    <div class="admin-panel">
+                        <div class="admin-panel-header">
+                            <div class="admin-panel-title">Most borrowed titles</div>
+                        </div>
+                        <div class="leaderboard-feature" id="top-book-feature">
+                            <p class="leaderboard-feature-empty">No loans yet.</p>
+                        </div>
+                        <ol class="leaderboard-list" id="top-books-list">
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="admin-modal-overlay" id="book-editor-modal">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h2 id="book-modal-title">Add book</h2>
+                <button type="button" class="admin-modal-close" data-close-modal="book-editor-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="book-form" class="admin-modal-form">
+                <div class="admin-modal-body">
+                    <div class="admin-form-grid">
+                        <div class="admin-form-field">
+                            <label for="book-title-input">Title</label>
+                            <input type="text" id="book-title-input" class="admin-input" required>
+                        </div>
+                        <div class="admin-form-field">
+                            <label for="book-author-input">Author</label>
+                            <input type="text" id="book-author-input" class="admin-input" required>
+                        </div>
+                    </div>
+                    <div class="admin-form-grid">
+                        <div class="admin-form-field">
+                            <label for="book-category-input">Category</label>
+                            <div style="display: flex; gap: 8px; align-items: stretch;">
+                                <select id="book-category-input" class="admin-input" required>
+                                    <option value="">Select category...</option>
+                                </select>
+                                <button type="button" class="admin-ghost-button small" id="add-category-btn"
+                                    title="Add new category">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="admin-form-field">
+                            <label for="book-status-input">Status</label>
+                            <select id="book-status-input" class="admin-input">
+                                <option value="available">Available</option>
+                                <option value="checked_out">Checked out</option>
+                                <option value="in_transit">In transit</option>
+                                <option value="overdue">Overdue</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="admin-form-grid">
+                        <div class="admin-form-field">
+                            <label for="book-image-input">Cover image file</label>
+                            <input type="file" id="book-image-input" class="admin-input" accept="image/*">
+                        </div>
+                        <div class="admin-form-field">
+                            <label for="book-pdf-input">PDF file</label>
+                            <input type="file" id="book-pdf-input" class="admin-input" accept="application/pdf">
+                        </div>
+                    </div>
+                    <div class="admin-form-grid">
+                        <div class="admin-form-field">
+                            <label for="book-copies-input">Copies</label>
+                            <input type="number" id="book-copies-input" class="admin-input" min="1" step="1" value="1">
+                        </div>
+                    </div>
+                    <div class="admin-form-field">
+                        <label for="book-description-input">Description</label>
+                        <textarea id="book-description-input" class="admin-textarea" rows="3"
+                            placeholder="Short summary or internal notes"></textarea>
+                    </div>
+                </div>
+                <div class="admin-modal-footer">
+                    <button type="submit" class="admin-primary-button" id="book-submit-btn">Add book</button>
+                    <button type="button" class="admin-ghost-button small" id="book-cancel-edit-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-modal-overlay" id="user-editor-modal">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h2 id="user-modal-title">Add user</h2>
+                <button type="button" class="admin-modal-close" data-close-modal="user-editor-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="user-form" class="admin-modal-form">
+                <div class="admin-modal-body">
+                    <div class="admin-form-grid">
+                        <div class="admin-form-field">
+                            <label for="user-name-input">Full name</label>
+                            <input type="text" id="user-name-input" class="admin-input" required>
+                        </div>
+                        <div class="admin-form-field">
+                            <label for="user-email-input">Email</label>
+                            <input type="email" id="user-email-input" class="admin-input" required>
+                        </div>
+                    </div>
+                    <div class="admin-form-grid">
+                        <div class="admin-form-field">
+                            <label for="user-role-input">Role</label>
+                            <select id="user-role-input" class="admin-input">
+                                <option value="User">User</option>
+                                <option value="Admin">Admin</option>
+                            </select>
+                        </div>
+                        <div class="admin-form-field">
+                            <label for="user-status-input">Status</label>
+                            <select id="user-status-input" class="admin-input">
+                                <option value="active">Active</option>
+                                <option value="limited">Limited</option>
+                                <option value="banned">Banned</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-modal-footer">
+                    <button type="submit" class="admin-primary-button" id="user-submit-btn">Add user</button>
+                    <button type="button" class="admin-ghost-button small" id="user-cancel-edit-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-modal-overlay" id="reservation-editor-modal">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h2 id="reservation-modal-title">Add reservation</h2>
+                <button type="button" class="admin-modal-close" data-close-modal="reservation-editor-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="reservation-form" class="admin-modal-form">
+                <div class="admin-modal-body">
+                    <div class="admin-form-grid">
+                        <div class="admin-form-field">
+                            <label for="reservation-book-input">Book</label>
+                            <select id="reservation-book-input" class="admin-input"></select>
+                        </div>
+                        <div class="admin-form-field">
+                            <label for="reservation-user-input">Member</label>
+                            <select id="reservation-user-input" class="admin-input"></select>
+                        </div>
+                    </div>
+                    <div class="admin-form-grid">
+                        <div class="admin-form-field">
+                            <label for="reservation-status-input">Status</label>
+                            <select id="reservation-status-input" class="admin-input">
+                                <option value="pending">Pending</option>
+                                <option value="ready">Ready</option>
+                                <option value="in_transit">In transit</option>
+                                <option value="completed">Completed</option>
+                                <option value="overdue">Overdue</option>
+                            </select>
+                        </div>
+                        <div class="admin-form-field">
+                            <label for="reservation-date-input">Date</label>
+                            <input type="date" id="reservation-date-input" class="admin-input">
+                        </div>
+                    </div>
+                    <div class="admin-form-grid">
+                        <div class="admin-form-field">
+                            <label for="reservation-queue-input">Queue #</label>
+                            <input type="number" id="reservation-queue-input" class="admin-input" min="0">
+                        </div>
+                        <div class="admin-form-field">
+                            <label for="reservation-eta-input">ETA</label>
+                            <input type="text" id="reservation-eta-input" class="admin-input" placeholder="e.g. 2 days">
+                        </div>
+                    </div>
+                </div>
+                <div class="admin-modal-footer">
+                    <button type="submit" class="admin-primary-button" id="reservation-submit-btn">Add
+                        reservation</button>
+                    <button type="button" class="admin-ghost-button small"
+                        id="reservation-cancel-edit-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Category Add Modal -->
+    <div class="admin-modal-overlay" id="category-add-modal">
+        <div class="admin-modal" style="max-width: 400px;">
+            <div class="admin-modal-header">
+                <h2>Add New Category</h2>
+                <button type="button" class="admin-modal-close" data-close-modal="category-add-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="category-form" class="admin-modal-form">
+                <div class="admin-modal-body">
+                    <div class="admin-form-field">
+                        <label for="new-category-input">Category Name</label>
+                        <input type="text" id="new-category-input" class="admin-input" placeholder="Enter category name"
+                            required>
+                    </div>
+                </div>
+                <div class="admin-modal-footer">
+                    <button type="submit" class="admin-primary-button" id="category-submit-btn">Add Category</button>
+                    <button type="button" class="admin-ghost-button small" id="category-cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/admin-dashboard-app.js"></script>
+</body>
+
+</html>

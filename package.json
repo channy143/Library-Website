@@ -1,0 +1,16 @@
+{
+  "name": "library-system",
+  "version": "1.0.0",
+  "description": "Library Management System - Vercel Serverless",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Static build complete'",
+    "start": "npx serve ."
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}

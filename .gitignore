@@ -1,0 +1,16 @@
+node_modules/
+*.log
+.env
+.env.local
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+*.db
+.vercel

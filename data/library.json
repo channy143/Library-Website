@@ -1,0 +1,396 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "$2a$10$hashedpasswordhere",
+      "full_name": "John Doe",
+      "role": "user",
+      "status": "active",
+      "account_balance": 0,
+      "created_at": "2026-01-30T22:18:15.793Z",
+      "updated_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 2,
+      "username": "jane_smith",
+      "email": "jane@example.com",
+      "password": "$2a$10$hashedpasswordhere",
+      "full_name": "Jane Smith",
+      "role": "user",
+      "status": "active",
+      "account_balance": 0,
+      "created_at": "2026-01-30T22:18:15.793Z",
+      "updated_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 3,
+      "username": "alex_reader",
+      "email": "alex@example.com",
+      "password": "$2a$10$hashedpasswordhere",
+      "full_name": "Alex Reader",
+      "role": "user",
+      "status": "active",
+      "account_balance": 0,
+      "created_at": "2026-01-30T22:18:15.793Z",
+      "updated_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 1770416333277,
+      "username": "dimii",
+      "email": "shirochan1106@gmail.com",
+      "password": "$2a$10$N677BKzWbLypuhcFrb7Wq.PaW3DZ8A/lWiw5LCzzUB5oPQ/sotzue",
+      "full_name": "Christian Salinas",
+      "role": "user",
+      "status": "active",
+      "account_balance": 0,
+      "created_at": "2026-02-06T22:18:53.277Z",
+      "updated_at": "2026-02-06T22:18:53.277Z"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "category": "Fiction",
+      "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800",
+      "pdf": null,
+      "description": "A story of decadence and excess in the Jazz Age.",
+      "copies": 3,
+      "available": 1,
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "category": "Sci-Fi",
+      "cover": "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800",
+      "pdf": null,
+      "description": "Dystopian social science fiction novel.",
+      "copies": 4,
+      "available": 2,
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 3,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "category": "Fiction",
+      "cover": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800",
+      "pdf": null,
+      "description": "A novel about racial injustice in the Deep South.",
+      "copies": 2,
+      "available": 0,
+      "status": "borrowed",
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 4,
+      "title": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "category": "Non-Fiction",
+      "cover": "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800",
+      "pdf": "brief_history.pdf",
+      "description": "Modern physics for general readers.",
+      "copies": 2,
+      "available": 1,
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 5,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "category": "Sci-Fi",
+      "cover": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=800",
+      "pdf": null,
+      "description": "Epic science fiction set on the desert planet Arrakis.",
+      "copies": 3,
+      "available": 1,
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 6,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "category": "Fantasy",
+      "cover": "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800",
+      "pdf": null,
+      "description": "A fantasy adventure following Bilbo Baggins.",
+      "copies": 5,
+      "available": 3,
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 7,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "category": "Fiction",
+      "cover": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800",
+      "pdf": null,
+      "description": "Romantic novel of manners.",
+      "copies": 3,
+      "available": 2,
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 8,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "category": "Fiction",
+      "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800",
+      "pdf": null,
+      "description": "Story of teenage angst and alienation.",
+      "copies": 2,
+      "available": 0,
+      "status": "borrowed",
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 9,
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "category": "Non-Fiction",
+      "cover": "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800",
+      "pdf": null,
+      "description": "Brief history of humankind.",
+      "copies": 4,
+      "available": 2,
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 10,
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "category": "Sci-Fi",
+      "cover": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=800",
+      "pdf": null,
+      "description": "An astronaut stranded on Mars fights for survival.",
+      "copies": 3,
+      "available": 1,
+      "created_at": "2026-01-30T22:18:15.793Z"
+    }
+  ],
+  "borrowed": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "book_id": 3,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "cover": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800",
+      "borrow_date": "2026-01-30T22:18:15.793Z",
+      "due_date": "2026-02-13T22:18:15.793Z",
+      "renewals_used": 0,
+      "status": "borrowed"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "book_id": 8,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800",
+      "borrow_date": "2026-01-30T22:18:15.793Z",
+      "due_date": "2026-02-13T22:18:15.793Z",
+      "renewals_used": 1,
+      "status": "borrowed"
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "book_id": 10,
+      "title": "The Martian",
+      "author": "Andy Weir",
+      "cover": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=800",
+      "borrow_date": "2026-02-05T22:18:15.793Z",
+      "due_date": "2026-02-20T22:18:15.793Z",
+      "renewals_used": 0,
+      "status": "borrowed"
+    },
+    {
+      "id": 4,
+      "user_id": 3,
+      "book_id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800",
+      "borrow_date": "2026-01-30T22:18:15.793Z",
+      "due_date": "2026-02-13T22:18:15.793Z",
+      "renewals_used": 0,
+      "status": "borrowed"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "book_id": 5,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "cover": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=800",
+      "reservation_date": "2026-02-06T22:18:15.793Z",
+      "pickup_date": null,
+      "expiry_date": "2026-02-20T22:18:15.793Z",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "book_id": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "cover": "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800",
+      "reservation_date": "2026-02-05T22:18:15.793Z",
+      "pickup_date": "2026-02-13T22:18:15.793Z",
+      "expiry_date": "2026-02-20T22:18:15.793Z",
+      "status": "active"
+    }
+  ],
+  "history": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "book_id": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "cover": "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800",
+      "action": "returned",
+      "action_date": "2026-02-05T22:18:15.793Z",
+      "details": "Book returned on time"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "book_id": 6,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "cover": "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800",
+      "action": "returned",
+      "action_date": "2026-01-30T22:18:15.793Z",
+      "details": "Book returned early"
+    },
+    {
+      "id": 3,
+      "user_id": 1,
+      "book_id": 3,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "cover": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800",
+      "action": "borrowed",
+      "action_date": "2026-01-30T22:18:15.793Z",
+      "details": "Book borrowed"
+    },
+    {
+      "id": 4,
+      "user_id": 2,
+      "book_id": 7,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "cover": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=800",
+      "action": "returned",
+      "action_date": "2026-02-05T22:18:15.793Z",
+      "details": "Book returned"
+    }
+  ],
+  "wishlist": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "book_id": 6,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "cover": "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800",
+      "added_date": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "book_id": 9,
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "cover": "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800",
+      "added_date": "2026-02-06T22:18:15.793Z"
+    }
+  ],
+  "user_profiles": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "phone": "+1-555-0123",
+      "bio": "Avid reader of fiction and sci-fi. Love discovering new authors.",
+      "preferences": "{\"theme\":\"dark\",\"notifications\":true}",
+      "avatar_url": null
+    },
+    {
+      "id": 2,
+      "user_id": 2,
+      "phone": "+1-555-0456",
+      "bio": "History enthusiast and non-fiction reader.",
+      "preferences": "{\"theme\":\"light\",\"notifications\":true}",
+      "avatar_url": null
+    }
+  ],
+  "favorite_books": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "book_id": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "cover": "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "book_id": 5,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "cover": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=800"
+    }
+  ],
+  "recently_read_books": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "book_id": 2,
+      "title": "1984",
+      "author": "George Orwell",
+      "cover": "https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=800",
+      "read_date": "2026-02-05T22:18:15.793Z"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "book_id": 6,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "cover": "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800",
+      "read_date": "2026-01-30T22:18:15.793Z"
+    }
+  ],
+  "admin_notifications": [],
+  "penalties": [],
+  "payment_transactions": [],
+  "book_holds": [],
+  "book_ratings": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "book_id": 2,
+      "rating": 5,
+      "review": "Absolutely brilliant dystopian novel.",
+      "created_at": "2026-01-30T22:18:15.793Z"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "book_id": 6,
+      "rating": 4,
+      "review": "Classic fantasy adventure.",
+      "created_at": "2026-01-30T22:18:15.793Z"
+    }
+  ]
+}
