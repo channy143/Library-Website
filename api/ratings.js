@@ -1,54 +1,41 @@
-const { db, setCorsHeaders } = require('../lib/db');
+const { loadData, setCorsHeaders, saveData } = require('../lib/db');
 
-function rateBook(userId, bookId, rating, review) {
+function rateBook(userId, bookId, rating, review, data) {
   const now = new Date().toISOString();
-  db.prepare(`
-    INSERT INTO book_ratings (user_id, book_id, rating, review, created_at, updated_at)
-    VALUES (?, ?, ?, ?, ?, ?)
-    ON CONFLICT(user_id, book_id) DO UPDATE SET
-    rating = excluded.rating,
-    review = excluded.review,
-    updated_at = excluded.updated_at
-  `).run(userId, bookId, rating, review || '', now, now);
-  
+  if (!data.book_ratings) data.book_ratings = [];
+  const existingIndex = data.book_ratings.findIndex(r => r.user_id === userId && r.book_id === bookId);
+  if (existingIndex >= 0) {
+    data.book_ratings[existingIndex].rating = rating;
+    data.book_ratings[existingIndex].review = review || '';
+    data.book_ratings[existingIndex].updated_at = now;
+  } else {
+    data.book_ratings.push({ id: Date.now(), user_id: userId, book_id: bookId, rating, review: review || '', created_at: now, updated_at: now });
+  }
+  saveData(data);
   return { success: true, message: 'Rating saved' };
 }
 
-function getBookRatings(bookId) {
-  const rows = db.prepare(`
-    SELECT r.*, u.username, u.full_name
-    FROM book_ratings r
-    JOIN users u ON r.user_id = u.id
-    WHERE r.book_id = ?
-    ORDER BY r.created_at DESC
-  `).all(bookId);
-  
-  return rows.map(row => ({
-    id: row.id,
-    userId: row.user_id,
-    bookId: row.book_id,
-    rating: row.rating,
-    review: row.review,
-    createdAt: row.created_at,
-    userName: row.full_name || row.username
-  }));
+function getBookRatings(bookId, data) {
+  const ratings = data.book_ratings?.filter(r => r.book_id === bookId) || [];
+  return ratings.map(r => {
+    const user = data.users?.find(u => u.id === r.user_id);
+    return { id: r.id, userId: r.user_id, bookId: r.book_id, rating: r.rating, review: r.review, createdAt: r.created_at, userName: user?.full_name || user?.username };
+  }).sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 }
 
-function getUserRating(userId, bookId) {
-  return db.prepare('SELECT * FROM book_ratings WHERE user_id = ? AND book_id = ?').get(userId, bookId);
+function getUserRating(userId, bookId, data) {
+  return data.book_ratings?.find(r => r.user_id === userId && r.book_id === bookId) || null;
 }
 
 module.exports = (req, res) => {
   setCorsHeaders(res);
-
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
-
-  const { action, bookId, userId } = req.query || {};
+  if (req.method === 'OPTIONS') { res.status(200).end(); return; }
+  const data = loadData();
+  const url = new URL(req.url, `http://${req.headers.host}`);
+  const action = url.searchParams.get('action');
+  const bookId = url.searchParams.get('bookId');
+  const userId = url.searchParams.get('userId');
   const body = req.body || {};
-
   try {
     switch (action) {
       case 'add':
@@ -61,26 +48,23 @@ module.exports = (req, res) => {
           res.status(400).json({ success: false, message: 'Rating must be between 1 and 5' });
           return;
         }
-        res.status(200).json(rateBook(parseInt(body.userId), parseInt(body.bookId), body.rating, body.review));
+        res.status(200).json(rateBook(parseInt(body.userId), parseInt(body.bookId), body.rating, body.review, data));
         break;
-
       case 'list':
         if (!bookId) {
           res.status(400).json({ success: false, message: 'Book ID required' });
           return;
         }
-        res.status(200).json({ success: true, data: getBookRatings(parseInt(bookId)) });
+        res.status(200).json({ success: true, data: getBookRatings(parseInt(bookId), data) });
         break;
-
       case 'get':
         if (!userId || !bookId) {
           res.status(400).json({ success: false, message: 'User ID and Book ID required' });
           return;
         }
-        const rating = getUserRating(parseInt(userId), parseInt(bookId));
+        const rating = getUserRating(parseInt(userId), parseInt(bookId), data);
         res.status(200).json({ success: true, data: rating });
         break;
-
       default:
         res.status(400).json({ success: false, message: 'Invalid action' });
     }
